@@ -1,21 +1,29 @@
+# phpstorm project files
 .idea
-# Composer files
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+/vendor
+
+# composer itself is not needed
 composer.phar
-vendor/
 
-# Local configs
-config/autoload/*.local.php
+# Mac DS_Store Files
+.DS_Store
 
-# Binary gettext files
-*.mo
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
 
-# Data
-data/logs/
-data/cache/
-data/sessions/
-data/tmp/
-temp/
-
-# Legacy ZF1
-demos/
-extras/documentation
+/trash

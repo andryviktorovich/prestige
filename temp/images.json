@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "image": "/temp/slider-images/1.jpg",
+    "preview": "/temp/slider-images/previews/1.jpg"
+  }, {
+    "id": 2,
+    "image": "/temp/slider-images/2.jpg",
+    "preview": "/temp/slider-images/previews/2.jpg"
+  }, {
+    "id": 3,
+    "image": "/temp/slider-images/3.jpg",
+    "preview": "/temp/slider-images/previews/3.jpg"
+  }, {
+    "id": 4,
+    "image": "/temp/slider-images/4.jpg",
+    "preview": "/temp/slider-images/previews/4.jpg"
+  }, {
+    "id": 5,
+    "image": "/temp/slider-images/1.jpg",
+    "preview": "/temp/slider-images/previews/1.jpg"
+  }
+
+]

@@ -6,12 +6,17 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute' => 'project',
+    'language' => 'ru-RU',
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            //'enableStrictParsing' => true,
             'rules' => [
-                '<controller>/<action>' => '<controller>/<action>'
+
+                'company/<page>'=>'company/index',
+                '<controller>/<action>/<page:\w+>' => '<controller>/<action>',
             ]
         ],
         'request' => [
@@ -26,7 +31,7 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'project/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -44,11 +49,26 @@ $config = [
                 ],
             ],
         ],
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'booleanFormat'=>['Нет','Да'],
+            'dateFormat' => 'php:Y.m.d',         //Тут можно формат вывода дат по умолчанию настроить
+            'datetimeFormat' => 'php:Y.m.d H:i',
+            'timeFormat' => 'short',
+            'nullDisplay'=>'Не задано',
+        ],
         'db' => require(__DIR__ . '/db.php'),
     ],
+    'aliases' => [
+        '@image' => '/home/andry/workspace/prs/public/images/uploads',
+        '@image_view' => '/public/images/uploads',
+        '@image_system' => '/public/images',
+        '@project' => 'public/images/projects',
+    ],
+
     'params' => $params,
 ];
-
+//
 //if (YII_ENV_DEV) {
 //    // configuration adjustments for 'dev' environment
 //    $config['bootstrap'][] = 'debug';

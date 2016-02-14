@@ -48,8 +48,8 @@ class ProjectsForm extends \yii\db\ActiveRecord
             [['dupdate', 'dcreate'], 'safe'],
             [['name', 'url','image'], 'string', 'max' => 256],
             [['imageFile'],  'image', 'extensions' => ['png', 'jpg', 'gif' , 'jpeg'], 'maxSize' => 6144*1024,
-                'minWidth' => 1000, 'maxWidth' => 5000,
-                'minHeight' => 500, 'maxHeight' => 5000,
+                'minWidth' => 200, 'maxWidth' => 5000,
+                'minHeight' => 100, 'maxHeight' => 5000,
             ],
         ];
     }

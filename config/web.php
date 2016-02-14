@@ -60,7 +60,7 @@ $config = [
         'db' => require(__DIR__ . '/db.php'),
     ],
     'aliases' => [
-        '@image' => '/home/andry/workspace/prs/public/images/uploads',
+        '@image' => '/var/www/v-21951/data/www/prestige-b-g.com/public/images/uploads',//'/home/andry/workspace/prs/public/images/uploads',
         '@image_view' => '/public/images/uploads',
         '@image_system' => '/public/images',
         '@project' => 'public/images/projects',

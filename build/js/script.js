@@ -224,7 +224,7 @@ $.fn.contactsMap = function() {
       }
     ];
     var map = new google.maps.Map($(this).context, {
-      center: {lat: 51.1232471, lng: 71.4293235},
+      center: {lat:51.1402835, lng: 71.4141537},
       zoom: 15,
       disableDefaultUI: true,
       styles: mapStyles,
@@ -232,7 +232,7 @@ $.fn.contactsMap = function() {
     });
 
     var marker = new google.maps.Marker({
-     position: {lat: 51.1232471, lng: 71.4293235},
+     position: {lat: 51.1402835, lng: 71.4141537},
      map: map,
      title: 'Hello World!'
    });
@@ -265,6 +265,18 @@ $.fn.folioSlider = function(_options) {
         this.worksUrl = $block.data('url');
         this.works = [];
         this.currentSlide = null;
+        this.scroll = {
+    			// common options
+    			enabled: true,
+    			paused: false,
+    			index: 0,
+    			length: this.works.length,
+    			// mousewheel pause (for mac devices)
+    			pause: 1300,
+    			pauseTimer: false,
+    			slides: [],
+    			available: true
+    		};
 
         var slider = this;
         this.sly = new Sly(slider.$nav,{

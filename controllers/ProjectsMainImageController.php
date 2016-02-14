@@ -53,10 +53,21 @@ class ProjectsMainImageController extends Controller
      */
     public function actionIndex()
     {
+        $query = ProjectsMainImage::find();
         $dataProvider = new ActiveDataProvider([
-            'query' => ProjectsMainImage::find(),
+            'query' => $query,
         ]);
-
+        $dataProvider->setSort([
+            'attributes' => [
+                'project.name' => [
+                    'asc' => ['projects.name' => SORT_ASC],
+                    'desc' => ['projects.name' => SORT_DESC],
+                    'label' => 'Full Name',
+                    'default' => SORT_ASC
+                ]
+            ]
+        ]);
+        $query->joinWith(['project']);
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);

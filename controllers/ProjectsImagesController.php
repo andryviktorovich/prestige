@@ -54,13 +54,24 @@ class ProjectsImagesController extends Controller
      */
     public function actionIndex()
     {
+        $query = ProjectsImages::find();
         $dataProvider = new ActiveDataProvider([
-            'query' => ProjectsImages::find(),
+            'query' => $query,
         ]);
-
+        $dataProvider->setSort([
+            'attributes' => [
+                'project.name' => [
+                    'asc' => ['projects.name' => SORT_ASC],
+                    'desc' => ['projects.name' => SORT_DESC],
+                    'label' => 'Full Name',
+                    'default' => SORT_ASC
+                ]
+            ]
+        ]);
+        $query->joinWith(['project']);
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
-        ]);
+                'dataProvider' => $dataProvider,
+            ]);
     }
 
     /**

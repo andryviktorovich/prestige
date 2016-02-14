@@ -44,6 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'short_description:html',
             'description:html',
             'active:boolean',
+            'number:integer'
         ],
     ]) ?>
 

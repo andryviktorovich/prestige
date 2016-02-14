@@ -37,8 +37,9 @@ class Project extends Model{
         $sql = "SELECT p.*, pt.type, pt.short_type
                 FROM projects p, projects_type pt
                 WHERE p.type_id = pt.id
-                AND p.active = 1
-                AND p.image != ''
+                    AND p.active = 1
+                    AND p.image != ''
+                ORDER BY p.number
                 ";
         return $this->db->createCommand($sql)->queryAll();
     }

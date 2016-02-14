@@ -43,7 +43,7 @@ class ProjectsForm extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'url', 'short_description', 'description'], 'required'],
-            [['type_id', 'active'], 'integer'],
+            [['type_id', 'active','number'], 'integer'],
             [['short_description', 'description'], 'string'],
             [['dupdate', 'dcreate'], 'safe'],
             [['name', 'url','image'], 'string', 'max' => 256],
@@ -68,6 +68,7 @@ class ProjectsForm extends \yii\db\ActiveRecord
             'short_description' => 'Краткое описание',
             'description' => 'Описание',
             'active' => 'Активное',
+            'number' => 'Номер вывода',
             'dupdate' => 'Дата обновления',
             'dcreate' => 'Дата создания',
             'imageFile' => 'Изображение для главной страницы',

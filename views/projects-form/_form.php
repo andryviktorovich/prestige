@@ -67,6 +67,8 @@ use yii\helpers\Url;
     ]); ?>
 
     <?= $form->field($model, 'active')->checkbox(); ?>
+
+    <?= $form->field($model, 'number')->textInput(['maxlength' => true]) ?>
 <!---->
 <!--    --><?//= $form->field($model, 'update')->textInput() ?>
 <!---->

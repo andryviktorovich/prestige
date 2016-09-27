@@ -42,7 +42,7 @@ class ProjectsForm extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'url', 'short_description', 'description'], 'required'],
+            [['name', 'url', 'description'], 'required'],
             [['type_id', 'active','number'], 'integer'],
             [['short_description', 'description'], 'string'],
             [['dupdate', 'dcreate'], 'safe'],

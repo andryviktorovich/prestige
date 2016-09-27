@@ -445,7 +445,6 @@ $.fn.folioSlider = function(_options) {
  * and keeping image proportions
  */
 $.fn.imageNormalize = function() {
-  console.log('normalize');
   $(this).each(function(){
     var $imageBlock = $(this);
     var blockWidth = parseInt($imageBlock.width());
@@ -463,6 +462,10 @@ $.fn.imageNormalize = function() {
       var margin = -(parseInt($image.width()) - parseInt($imageBlock.width()))/2;
       $image.css('margin-left',margin + 'px');
       $image.css('margin-right',margin + 'px');
+
+      var margin = -(parseInt($image.height()) - parseInt($imageBlock.height()))/2;
+      $image.css('margin-top',margin + 'px');
+      //$image.css('margin-right',margin + 'px');
   });
 }
 
@@ -536,7 +539,7 @@ $(function(){
 		imageBtnPrev:'build/images/lightbox-btn-prev.gif',
 		imageBtnNext:'build/images/lightbox-btn-next.gif',
 		imageBtnClose:'build/images/lightbox-btn-close.gif',
-		imageBlank:'build/images/blank.gif',
+		imageBlank:'build/images/lightbox-blank.gif',
 		beforeOpen: function(event){
         alert('beforeOpen');
     },
